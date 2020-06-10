@@ -1,0 +1,44 @@
+#チンチロリン　サイコロの数自在
+
+from vpython import* 
+
+import random
+
+n=int(input())#4をinput
+
+di=[]
+for i in range(n):
+    a=random.randint(1,4)
+    di.append(a)
+print(di)   
+for i in range(n): #4がinputされてる
+    box(pos=vector(11*i+(-5.5*(n-1)),0,0),length=10,width=1,height=10,color=color.white) 
+    
+    
+    if di[i]==1:
+        cylinder(pos=vector(11*i-(5.5*(n-1)),0,0),axis=vector(0,0,1),radius=1,color=color.red)
+    elif di[i]==2:
+        cylinder(pos=vector(11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),color=color.black) 
+        cylinder(pos=vector(11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),color=color.black) 
+    elif  di[i]==3:
+        cylinder(pos=vector(11*i-(5.5*(n-1)),0,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black) 
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)  
+    elif  di[i]==4:
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black)  
+    elif  di[i]==5:
+        cylinder(pos=vector(11*i-(5.5*(n-1)),0,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black)    
+    else:
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),0,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),0,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),-2.5,0),axis=vector(0,0,1),radius=1,color=color.black)
+        cylinder(pos=vector(-2.5+11*i-(5.5*(n-1)),2.5,0),axis=vector(0,0,1),radius=1,color=color.black)    
